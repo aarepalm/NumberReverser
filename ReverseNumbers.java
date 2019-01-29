@@ -1,10 +1,13 @@
+
 class ReverseNumbers {
 
+	///////////////////////
+	//////////// Solution 1
 	private void reverseNumberNonRecursive(int numberToReverse) {
 		// Nothing to be done for single digit number
 		if (numberToReverse < 10)
 		{
-			System.out.println("Reversed number is " + numberToReverse);
+			System.out.print(numberToReverse);
 			return;
 		}
 		//  Print out all the digits in reverse order
@@ -25,6 +28,8 @@ class ReverseNumbers {
 		}
 	}
 
+        ///////////////////////
+        //////////// Solution 2
 	private void reverseNumberRecursive(int numberToReverse) {
 		if (numberToReverse < 10) {
 			System.out.print(numberToReverse);
@@ -35,15 +40,53 @@ class ReverseNumbers {
 		}
 	}
 
+        ///////////////////////
+        //////////// Solution 3
+	private void reverseNumberWithStringConversion(int numberToReverse) {
+		String intAsString = Integer.toString(numberToReverse);
+		int stringLength = intAsString.length();
+		while (stringLength != 0) {
+			System.out.print(intAsString.charAt(--stringLength));
+		}
+	}
+
 	public static void main(String[] args) {
 		ReverseNumbers reverser = new ReverseNumbers();
 		int numberFromUserInput = 13579; // This could be read from user input
+
+		System.out.println(" ---------- Reversing a number that is at least 2 digits ----------------");
 		System.out.println("Reversing " + numberFromUserInput);
 		// Notice the \n, this makes a line change in output
 		System.out.println("\nNon-recursive");
 		reverser.reverseNumberNonRecursive(numberFromUserInput);
-		System.out.println("\n\nRecursive");
+		System.out.println("\nRecursive");
 		reverser.reverseNumberRecursive(numberFromUserInput);
+                System.out.println("\nConverting to string");
+                reverser.reverseNumberWithStringConversion(numberFromUserInput);
+
+
+		numberFromUserInput = 0;
+                System.out.println("\n\n ---------- Reversing a 0 (must not crash :-) ---------------------------");
+                System.out.println("Reversing " + numberFromUserInput);
+                // Notice the \n, this makes a line change in output
+                System.out.println("\nNon-recursive");
+                reverser.reverseNumberNonRecursive(numberFromUserInput);
+                System.out.println("\nRecursive");
+                reverser.reverseNumberRecursive(numberFromUserInput);
+                System.out.println("\nConverting to string");
+                reverser.reverseNumberWithStringConversion(numberFromUserInput);
+
+		numberFromUserInput = 4;
+                System.out.println("\n\n ---------- Reversing a single digit number (must not crash :-) --------");
+                System.out.println("Reversing " + numberFromUserInput);
+                // Notice the \n, this makes a line change in output
+                System.out.println("\nNon-recursive");
+                reverser.reverseNumberNonRecursive(numberFromUserInput);
+                System.out.println("\nRecursive");
+                reverser.reverseNumberRecursive(numberFromUserInput);
+                System.out.println("\nConverting to string");
+                reverser.reverseNumberWithStringConversion(numberFromUserInput);
+
 
 		// Just the get the command line promt on next line after program ends
 		System.out.println("");
