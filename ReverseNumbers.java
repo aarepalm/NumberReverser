@@ -4,14 +4,7 @@ class ReverseNumbers {
 	///////////////////////
 	//////////// Solution 1
 	private void reverseNumberNonRecursive(int numberToReverse) {
-		// Nothing to be done for single digit number
-		if (numberToReverse < 10)
-		{
-			System.out.print(numberToReverse);
-			return;
-		}
-		//  Print out all the digits in reverse order
-		while (numberToReverse > 0)
+		do
 		{
 			// Print out the remainder, for example  7532%10 == 2
 			System.out.print(numberToReverse%10);
@@ -25,7 +18,7 @@ class ReverseNumbers {
 			// print 5 and new numberToReverse is 7
 			// print 7 and new numberToReverse is 0
 			// while loop stops since the condition (numberToRevers > 0) does not hold anymore
-		}
+		} while (numberToReverse > 0);
 	}
 
         ///////////////////////
