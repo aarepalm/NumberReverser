@@ -26,8 +26,8 @@ class ReverseNumbers {
 	       	// Print out the single, for example the 2 from 7532
 		System.out.print(numberToReverse%10);
 	       	// If the numberToReverse has more than one digit then chop off the single (and making the
-	       	// the number one digit smaller) and call the same function again.
-	       	// Note that when we are calling the function with digit, the 7 in out example, it is printed
+	       	// the number one digit shorter) and call the same function again.
+	       	// Note that when we are calling the function with last digit, the 7 in out example, it is printed
 	       	// and the recursion stops.
 		if (numberToReverse > 9)
 	        	reverseNumberRecursive(numberToReverse/10);
@@ -40,7 +40,7 @@ class ReverseNumbers {
 		String intAsString = Integer.toString(numberToReverse);
 		int stringLength = intAsString.length();
 		while (stringLength != 0) {
-			// Note that the stringLength is first decremented and the new value is used in the expression
+			// Note that the stringLength is first decremented and the then new value is used in the expression
 			System.out.print(intAsString.charAt(--stringLength));
 		}
 	}
