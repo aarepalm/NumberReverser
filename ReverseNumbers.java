@@ -7,7 +7,7 @@ class ReverseNumbers {
 		do {
 			// Print out the remainder, for example  7532%10 == 2
 			System.out.print(numberToReverse%10);
-			// "Shift" the number to right, for example, 7532/10 == 753
+			// "Shift" the number to right (or chop off the rightmost digit), for example, 7532/10 == 753
 			numberToReverse = numberToReverse/10;
 
 			// NB! Repeat the statements above until the number is all printed reversed
@@ -27,7 +27,7 @@ class ReverseNumbers {
 		System.out.print(numberToReverse%10);
 	       	// If the numberToReverse has more than one digit then chop off the single (and making the
 	       	// the number one digit shorter) and call the same function again.
-	       	// Note that when we are calling the function with last digit, the 7 in out example, it is printed
+	       	// Note that when we are calling the function with last digit, the 7 in our example, it is printed
 	       	// and the recursion stops.
 		if (numberToReverse > 9)
 	        	reverseNumberRecursive(numberToReverse/10);
