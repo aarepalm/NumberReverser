@@ -49,6 +49,8 @@ class ReverseNumbers {
 		ReverseNumbers reverser = new ReverseNumbers();
 		int numberFromUserInput = 13579; // This could be read from user input
 
+		/////////////////////////////////////////////////////////////////////////////////
+		//////// This section is just for testing that all works with multi-digit numbers
 		System.out.println(" ---------- Reversing a number that is at least 2 digits ----------------");
 		System.out.println("Reversing " + numberFromUserInput);
 		// Notice the \n, this makes a line change in output
@@ -60,6 +62,8 @@ class ReverseNumbers {
                 reverser.reverseNumberWithStringConversion(numberFromUserInput);
 
 
+		/////////////////////////////////////////////////////////////////////////////////
+		//////// This section is just for testing that all works with number 0
 		numberFromUserInput = 0;
                 System.out.println("\n\n ---------- Reversing a 0 (must not crash :-) ---------------------------");
                 System.out.println("Reversing " + numberFromUserInput);
@@ -71,6 +75,8 @@ class ReverseNumbers {
                 System.out.println("\nConverting to string");
                 reverser.reverseNumberWithStringConversion(numberFromUserInput);
 
+		/////////////////////////////////////////////////////////////////////////////////
+		//////// This section is just for testing that all works with single-digit numbers
 		numberFromUserInput = 4;
                 System.out.println("\n\n ---------- Reversing a single digit number (must not crash :-) --------");
                 System.out.println("Reversing " + numberFromUserInput);
