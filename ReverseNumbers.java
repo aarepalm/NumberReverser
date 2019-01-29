@@ -4,7 +4,8 @@ class ReverseNumbers {
 	///////////////////////
 	//////////// Solution 1
 	private void reverseNumberNonRecursive(int numberToReverse) {
-		do {
+		do
+		{
 			// Print out the remainder, for example  7532%10 == 2
 			System.out.print(numberToReverse%10);
 			// "Shift" the number to right, for example, 7532/10 == 753
@@ -22,15 +23,11 @@ class ReverseNumbers {
 
         ///////////////////////
         //////////// Solution 2
-	private void reverseNumberRecursive(int numberToReverse) {
-		if (numberToReverse < 10) {
-			System.out.print(numberToReverse);
-		}
-		else {
-			System.out.print(numberToReverse%10);
-			reverseNumberRecursive(numberToReverse/10);
-		}
-	}
+       private void reverseNumberRecursive(int numberToReverse) {
+		System.out.print(numberToReverse%10);
+		if (numberToReverse > 9)
+	        	reverseNumberRecursive(numberToReverse/10);
+        }
 
         ///////////////////////
         //////////// Solution 3
