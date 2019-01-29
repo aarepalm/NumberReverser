@@ -61,7 +61,6 @@ class ReverseNumbers {
                 System.out.println("\nConverting to string");
                 reverser.reverseNumberWithStringConversion(numberFromUserInput);
 
-
 		/////////////////////////////////////////////////////////////////////////////////
 		//////// This section is just for testing that all works with number 0
 		numberFromUserInput = 0;
