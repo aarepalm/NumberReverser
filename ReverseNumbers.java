@@ -3,7 +3,7 @@ class ReverseNumbers {
 
 	///////////////////////
 	//////////// Solution 1
-	private void reverseNumberNonRecursive(int numberToReverse) {
+	public void reverseNumberNonRecursive(int numberToReverse) {
 		do {
 			// Print out the remainder, for example  7532%10 == 2
 			System.out.print(numberToReverse%10);
@@ -22,7 +22,7 @@ class ReverseNumbers {
 
         ///////////////////////
         //////////// Solution 2
-        private void reverseNumberRecursive(int numberToReverse) {
+        public void reverseNumberRecursive(int numberToReverse) {
 		// "Shift" the number to right (or chop off the rightmost digit), for example, 7532/10 == 753
 		System.out.print(numberToReverse%10);
 	       	// If the numberToReverse has more than one digit then chop off the single (and making the	
@@ -36,7 +36,7 @@ class ReverseNumbers {
 
         ///////////////////////
         //////////// Solution 3
-	private void reverseNumberWithStringConversion(int numberToReverse) {
+	public void reverseNumberWithStringConversion(int numberToReverse) {
 		// Convert the numberToReverse to String so we could index all characters individually
 		String intAsString = Integer.toString(numberToReverse);
 		int stringLength = intAsString.length();
