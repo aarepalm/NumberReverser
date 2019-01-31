@@ -7,7 +7,7 @@ class ReverseNumbers {
 		do {
 			// Print out the remainder, for example  7532%10 == 2
 			System.out.print(numberToReverse%10);
-			// "Shift" the number to right, for example, 7532/10 == 753
+			// "Shift" the number to right (or chop off the rightmost digit), for example, 7532/10 == 753
 			numberToReverse = numberToReverse/10;
 
 			// NB! Repeat the statements above until the number is all printed reversed
@@ -23,14 +23,21 @@ class ReverseNumbers {
         ///////////////////////
         //////////// Solution 2
         private void reverseNumberRecursive(int numberToReverse) {
+		// "Shift" the number to right (or chop off the rightmost digit), for example, 7532/10 == 753
 		System.out.print(numberToReverse%10);
+	       	// If the numberToReverse has more than one digit then chop off the single (and making the	
+	       	// the number one digit shorter) and call the same function again.	
+	       	// Note that when we are calling the function with last digit, the 7 in our example, it is printed	
+	       	// and the recursion stops.		
 		if (numberToReverse > 9)
+			// Note that the stringLength is first decremented and the then new value is used in the expression
 	        	reverseNumberRecursive(numberToReverse/10);
         }
 
         ///////////////////////
         //////////// Solution 3
 	private void reverseNumberWithStringConversion(int numberToReverse) {
+		// Convert the numberToReverse to String so we could index all characters individually
 		String intAsString = Integer.toString(numberToReverse);
 		int stringLength = intAsString.length();
 		while (stringLength != 0) {
@@ -64,7 +71,8 @@ class ReverseNumbers {
                 System.out.println("\nConverting to string");
                 reverser.reverseNumberWithStringConversion(numberFromUserInput);
 
-
+		/////////////////////////////////////////////////////////////////////////////////	
+ 		//////// This section is just for testing that all works with number 0	
 		numberFromUserInput = 0;
                 System.out.println("\n\n ---------- Reversing a 0 (must not crash :-) ---------------------------");
                 System.out.println("Reversing " + numberFromUserInput);
@@ -76,6 +84,8 @@ class ReverseNumbers {
                 System.out.println("\nConverting to string");
                 reverser.reverseNumberWithStringConversion(numberFromUserInput);
 
+		/////////////////////////////////////////////////////////////////////////////////	
+		//////// This section is just for testing that all works with single-digit numbers			
 		numberFromUserInput = 4;
                 System.out.println("\n\n ---------- Reversing a single digit number (must not crash :-) --------");
                 System.out.println("Reversing " + numberFromUserInput);
